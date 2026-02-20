@@ -1,0 +1,5 @@
+Note to self:
+
+When using this in WSL or linux setup, consider setting up .bashrc. 
+Check the type of shell session you're in as well (login or non-login) as it determines whether you're gonna read from that .bashrc or not, especially in vscode
+Sometimes vscode can be weird at times and not read the .bashrc despite starting as interactive shell by default without using the `--interactive` option...
