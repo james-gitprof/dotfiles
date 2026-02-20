@@ -48,9 +48,11 @@ else
   vim.cmd("nmap <leader>c :e ~/.config/nvim/init.lua<cr>")
   --[[Settings applicable exclusively on Neovim application]]
   -- vim line numbers
-  vim.wo.number = true
+  vim.opt.number = true
   -- relative line numbering
-  vim.wo.relativenumber = true
+  vim.opt.relativenumber = true
+  -- smart indent
+  vim.opt.smartindent = true
 end
 
 -- [general options]
@@ -87,24 +89,24 @@ require("lazy").setup({
       "kylechui/nvim-surround",
       version = "^3.0.0", -- Use for stability; omit to use `main` branch for the latest features
       event = "VeryLazy",
-      config = function()
-        require("nvim-surround").setup({
-          -- Configuration here, or leave empty to use defaults
-        })
-      end
+      main = "nvim-surround",
+      opts = {
+      }
     },
     {
       -- qol plugin for sneaking around(?)
       "justinmk/vim-sneak",
       init = function()
-        -- rebinding of sneak
-        vim.keymap.set("n", "q", "<Plug>Sneak_s")
-        vim.keymap.set("n", "Q", "<Plug>Sneak_S")
         -- disabling sneak highligting
         vim.cmd("highlight link Sneak None")
         vim.cmd("highlight link SneakCurrent None")
+
       end
-    }
+    },
+    {
+	    "romainl/vim-cool",
+      cond = true 
+    },
   },
   checker = { enabled = true },
 })
