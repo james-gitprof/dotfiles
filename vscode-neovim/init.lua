@@ -26,11 +26,6 @@ vim.opt.rtp:prepend(lazypath)
 -- assigning <\> as leader key
 vim.g.mapleader = '<BSlash>'
 
-vim.api.nvim_create_autocmd("TextYankPost", {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-})
 
 if vim.g.vscode then
   local vscode = require('vscode')
