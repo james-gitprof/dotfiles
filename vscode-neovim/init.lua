@@ -121,7 +121,29 @@ require("lazy").setup({
     },
     {
 	    "romainl/vim-cool",
-      cond = true 
+      cond = false,
+    },
+    {
+      -- alternative for sneak in vscode
+      "unblevable/quick-scope",
+      init = function()
+        vim.cmd("highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline")
+        vim.cmd("highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline")
+      end,
+    },
+    {
+      -- another helper
+      "easymotion/vim-easymotion",
+    },
+    {
+      -- extra
+      {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        opts = {
+          theme = "codedark",
+        }
+      }
     },
   },
   checker = { enabled = true },
