@@ -41,7 +41,6 @@ if vim.g.vscode then
   -- same goes for fd (it may renamed as fdfind)
   --]]
 else
-  vim.g.mapleader = " " -- <Space> as leader key in neovim native
   -- opening config file on <leader>c; applicable only on linux
   vim.cmd("nmap <leader>c :e ~/.config/nvim/init.lua<cr>")
   --[[Settings applicable exclusively on Neovim application]]
