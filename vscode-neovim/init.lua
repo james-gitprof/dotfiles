@@ -83,18 +83,13 @@ local insertOperationsGroup = vim.api.nvim_create_augroup("insertOps", {clear = 
 vim.api.nvim_create_autocmd("InsertEnter", {
   group = insertOperationsGroup,
   callback = function()
-    if (vim.g.vscode) then
-	    vscode.update_config("editor.lineNumbers", "on")
-    end
     vim.cmd("set nornu")
+    vim.cmd("set number")
   end
 })
 vim.api.nvim_create_autocmd("InsertLeave", {
   group = insertOperationsGroup,
   callback = function()
-    if (vim.g.vscode) then
-	    vscode.update_config("editor.lineNumbers", "relative")
-    end
     vim.cmd("set rnu")
   end
 })
