@@ -80,6 +80,27 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.hl.on_yank({ higroup = 'Search' })
   end,
 })
+-- for insert mode operations
+local insertOperationsGroup = vim.api.nvim_create_augroup("insertOps", {clear = true})
+-- set relative when outside of insert, set absolute line numbers during insert mode
+vim.api.nvim_create_autocmd("InsertEnter", {
+  group = insertOperationsGroup,
+  callback = function()
+    if (vim.g.vscode) then
+	    vscode.update_config("editor.lineNumbers", "on")
+    end
+    vim.cmd("set nornu")
+  end
+})
+vim.api.nvim_create_autocmd("InsertLeave", {
+  group = insertOperationsGroup,
+  callback = function()
+    if (vim.g.vscode) then
+	    vscode.update_config("editor.lineNumbers", "relative")
+    end
+    vim.cmd("set rnu")
+  end
+})
 
 -- plugin loading
 require("lazy").setup({
