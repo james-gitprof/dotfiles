@@ -113,8 +113,11 @@ require("lazy").setup({
         -- disabling sneak highligting
         vim.cmd("highlight link Sneak None")
         vim.cmd("highlight link SneakCurrent None")
-
-      end
+        vim.g["sneak#label"] = 1
+      end,
+      cond = function()
+        return not vim.g.vscode
+      end,
     },
     {
 	    "romainl/vim-cool",
