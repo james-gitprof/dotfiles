@@ -27,9 +27,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 
+local vscodeInstance
 
 if vim.g.vscode then
   local vscode = require('vscode')
+  vscodeInstance = vscode
   -- [VSCODE Settings]
   -- [[
   -- current settings of vscode making use of this neovim config requires the use of binocular extension, which provides telescope-like functionality
