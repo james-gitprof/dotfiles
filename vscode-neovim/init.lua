@@ -6,6 +6,9 @@
 -- Either that from above, or nuke the plugin directory also if it exists. Location depends on the plugin manager
 --]]
 
+vim.g.mapleader = "\\"
+
+
 -- plugin manager bootstrapping
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -23,8 +26,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- assigning <\> as leader key
-vim.g.mapleader = '<BSlash>'
 
 
 if vim.g.vscode then
