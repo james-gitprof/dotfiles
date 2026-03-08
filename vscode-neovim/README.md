@@ -10,9 +10,9 @@ It makes primary use of the following plugins:
      - **Essential plugin** (for me)
      - Sourced from neovim's plugin ecosystem.
      - Keybind is slightly different from the default. See `init.lua` for the new keybinds.
- - Binocular
+ - ~~Binocular~~ Code Telescope
      - Vscode vim extension used to emulate `telescope` functionality originally from neovim.
-     - Requires multiple dependencies. See the marketplace of this extension for details. 
+     - ~~Requires multiple dependencies. See the marketplace of this extension for details.~~ Recommended to install `ripgrep` for faster file lookup.
  - EasyMotion
 	 - For better navigation. Replacement for Vim Sneak since it doesn't play well with my current config :(
  - QuickScope
