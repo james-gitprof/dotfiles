@@ -3,6 +3,8 @@
 
 This configuration makes use of vscode-neovim extension coupled with LUA config from native neovim.
 
+**This requires `neovim` to be installed on the machine.**
+
 It makes primary use of the following plugins:
 
  - Vim Surround 
